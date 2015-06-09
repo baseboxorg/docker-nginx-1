@@ -15,11 +15,11 @@ COPY ./conf/docker-entrypoint.sh /
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 COPY ./conf/domain.conf /etc/nginx/sites-available/
 
-RUN sed -i -E "s/mysite\.mydomain\.com/${domain}/" /etc/nginx/sites-available/domain.conf \
+RUN sed -i -E "s/mysite\.mydomain\.com/${domain}/g" /etc/nginx/sites-available/domain.conf \
  && mv /etc/nginx/sites-available/domain.conf /etc/nginx/sites-available/${domain}.conf \
  && ln -s /etc/nginx/sites-available/${domain}.conf /etc/nginx/sites-enabled/${domain}.conf \
  && mkdir -p /var/www/vhosts/localhost/www \
  && echo "<?php phpinfo() ?>" >> /var/www/vhosts/localhost/www/index.php \
  && chmod +x /docker-entrypoint.sh
 
-CMD [ "./docker-entrypoint.sh" ]
+CMD [ "/docker-entrypoint.sh" ]
