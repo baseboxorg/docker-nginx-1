@@ -13,6 +13,7 @@ RUN apk --update add nginx php-fpm \
 
 COPY ./conf/docker-entrypoint.sh /
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
+COPY ./conf/proxy.conf /etc/nginx/conf.d/proxy.conf
 COPY ./conf/domain.conf /etc/nginx/sites-available/
 
 RUN sed -i -E "s/mysite\.mydomain\.com/${domain}/g" /etc/nginx/sites-available/domain.conf \
