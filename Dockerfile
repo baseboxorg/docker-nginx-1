@@ -8,6 +8,7 @@ RUN apk --update add nginx php-fpm \
  && mkdir /etc/nginx/sites-enabled \
  && addgroup nginx www-data \
  && chmod +x /nginx-entrypoint.sh \
+ && chown -R nginx:www-data /var/lib/nginx \
  && rm -rf /var/www/* \
  && rm -rf /var/cache/apk/*
 
