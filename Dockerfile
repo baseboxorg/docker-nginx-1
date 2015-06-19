@@ -11,7 +11,6 @@ RUN apk --update add nginx \
  && chown -R nginx:www-data /var/www/localhost
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./proxy.conf /etc/nginx/conf.d/proxy.conf
 COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
 EXPOSE 80 443
