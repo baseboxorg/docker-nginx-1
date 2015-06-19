@@ -1,23 +1,20 @@
 FROM alpine:latest
 MAINTAINER Vincent Boutour <vincent.boutour@gmail.com>
 
-COPY ./conf/nginx-entrypoint.sh /
-
-RUN apk --update add nginx php-fpm \
- && mkdir /etc/nginx/sites-available \
- && mkdir /etc/nginx/sites-enabled \
- && addgroup nginx www-data \
- && chmod +x /nginx-entrypoint.sh \
- && chown -R nginx:www-data /var/lib/nginx \
+RUN apk --update add nginx \
  && rm -rf /var/www/* \
- && rm -rf /var/cache/apk/*
+ && rm -rf /var/cache/apk/* \
+ && mkdir -p /etc/nginx/sites-enabled \
+ && mkdir -p /var/www/localhost \
+ && addgroup nginx www-data \
+ && chown -R nginx:www-data /var/lib/nginx \
+ && chown -R nginx:www-data /var/www/localhost
 
-COPY ./conf/nginx.conf /etc/nginx/nginx.conf
-COPY ./conf/proxy.conf /etc/nginx/conf.d/proxy.conf
-COPY ./conf/domain.conf /etc/nginx/sites-available/
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./proxy.conf /etc/nginx/conf.d/proxy.conf
+COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
 EXPOSE 80 443
-ENV DOMAIN_NAME localhost
-VOLUME /var/www/vhosts/${DOMAIN_NAME}/www
+VOLUME /var/www/localhost
 
-ENTRYPOINT [ "/nginx-entrypoint.sh" ]
+ENTRYPOINT [ "nginx" ]
