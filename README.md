@@ -1,5 +1,8 @@
 # docker-nginx
-Creating light image (17 mo) for a nginx based on Alpine Linux.
+
+[![](https://badge.imagelayers.io/vibioh/nginx:latest.svg)](https://imagelayers.io/?images=vibioh/nginx:latest 'Get your own badge on imagelayers.io')
+
+Creating light image for a nginx based on Alpine Linux.
 
 ## Installation
 
