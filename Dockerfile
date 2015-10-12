@@ -12,7 +12,8 @@ RUN apk --update add nginx \
  && chown -R nginx:nginx /var/run/nginx \
  && chown -R nginx:www-data /var/www/localhost
 
-COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf /etc/nginx/
+COPY ./proxy.conf /etc/nginx/conf.d/
 COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
 EXPOSE 1080 10443
