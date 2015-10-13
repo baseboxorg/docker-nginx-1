@@ -16,12 +16,14 @@ COPY ./nginx.conf /etc/nginx/
 COPY ./proxy.conf /etc/nginx/conf.d/
 COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
-EXPOSE 1080 10443
 VOLUME /var/www/localhost
 VOLUME /var/log/nginx
 
 # For read-only purpose
 VOLUME /var/lib/nginx
 VOLUME /var/run/nginx
+
+EXPOSE 1080 10443
+USER nginx
 
 ENTRYPOINT [ "nginx" ]
