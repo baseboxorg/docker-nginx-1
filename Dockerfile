@@ -2,17 +2,14 @@ FROM alpine:latest
 MAINTAINER Vincent Boutour <vincent.boutour@gmail.com>
 
 RUN apk --update add nginx \
+ && addgroup nginx www-data \
  && rm -rf /var/www/* \
- && rm -rf /var/cache/apk/* \
  && mkdir -p /etc/nginx/sites-enabled \
  && mkdir -p /var/www/localhost \
- && mkdir -p /var/www/localhost.d \
- && addgroup nginx www-data \
- && chown -R nginx:nginx /var/lib/nginx \
- && chown -R nginx:nginx /var/log/nginx \
- && chown -R nginx:nginx /var/run/nginx \
  && chown -R nginx:www-data /var/www/localhost \
- && chown -R nginx:www-data /var/www/localhost.d \
+ && chown -R nginx:nginx /var/log/nginx \
+ && chown -R nginx:nginx /var/lib/nginx \
+ && chown -R nginx:nginx /var/run/nginx \
  && rm -rf /var/cache/apk/*
 
 COPY ./nginx.conf /etc/nginx/
