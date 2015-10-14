@@ -12,11 +12,12 @@ RUN apk --update add nginx \
  && chown -R nginx:nginx /var/log/nginx \
  && chown -R nginx:nginx /var/run/nginx \
  && chown -R nginx:www-data /var/www/localhost \
- && chown -R nginx:www-data /var/www/localhost.d
+ && chown -R nginx:www-data /var/www/localhost.d \
+ && rm -rf /var/cache/apk/*
 
 COPY ./nginx.conf /etc/nginx/
 COPY ./proxy.conf /etc/nginx/conf.d/
-COPY ./localhost.conf /etc/nginx/sites-enabled/localhost.d
+COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
 VOLUME /var/www/localhost
 VOLUME /var/log/nginx
