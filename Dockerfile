@@ -7,9 +7,9 @@ RUN apk --update add nginx \
  && mkdir -p /etc/nginx/sites-enabled \
  && mkdir -p /var/www/localhost \
  && chown -R nginx:www-data /var/www/localhost \
- && chown -R nginx:nginx /var/log/nginx \
- && chown -R nginx:nginx /var/lib/nginx \
- && chown -R nginx:nginx /var/run/nginx \
+ && chown -R nginx:nogroup /var/log/nginx \
+ && chown -R nginx:nogroup /var/lib/nginx \
+ && chown -R nginx:nogroup /var/run/nginx \
  && rm -rf /var/cache/apk/*
 
 COPY ./nginx.conf /etc/nginx/
