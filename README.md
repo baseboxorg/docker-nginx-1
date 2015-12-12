@@ -2,18 +2,18 @@
 
 [![](https://badge.imagelayers.io/vibioh/nginx:latest.svg)](https://imagelayers.io/?images=vibioh/nginx:latest 'Get your own badge on imagelayers.io')
 
-Creating light image for a nginx based on Alpine Linux.
+Light image for a nginx based on Alpine Linux.
 
-## Installation
+## Building
 
 `docker build -t vibioh/nginx --rm .`
 
 ## Usage
 
     docker run -d \
-      -p 80:1080 \
       --name nginx \
+      -p 80:1080 \
       --read-only \
       vibioh/nginx:latest
 
-After, simply browse [homemage](http://docker-ip/) to see content.
+After, simply browse [homemage](http://docker-ip/) to see content in `/var/www/localhost`.
