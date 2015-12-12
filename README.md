@@ -10,12 +10,10 @@ Creating light image for a nginx based on Alpine Linux.
 
 ## Usage
 
-    docker run \
-      -d \
+    docker run -d \
       -p 80:1080 \
-      -p 443:10443 \
-      --name test_nginx \
+      --name nginx \
       --read-only \
       vibioh/nginx:latest
 
-After, simply browse [homemage](http://localhost/) to see content.
+After, simply browse [homemage](http://docker-ip/) to see content.

@@ -18,7 +18,7 @@ COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
 VOLUME /var/www/localhost /var/log/nginx /var/lib/nginx /var/run/nginx
 
-EXPOSE 1080 10443
+EXPOSE 1080
 USER nginx
 
 ENTRYPOINT [ "nginx" ]
