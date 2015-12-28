@@ -3,9 +3,9 @@ MAINTAINER Vincent Boutour <vincent.boutour@gmail.com>
 
 ENV WWW_DIR=/var/www/localhost
 
-RUN apk --update add nginx \
- && adduser -u 1001 -S -s /sbin/nologin nginx \
+RUN adduser -u 1001 -S -s /sbin/nologin nginx \
  && addgroup nginx www-data \
+ && apk --update add nginx \
  && rm -rf /var/www/* \
  && mkdir -p /etc/nginx/sites-enabled \
  && mkdir -p ${WWW_DIR} \
