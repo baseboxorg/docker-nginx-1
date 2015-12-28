@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Vincent Boutour <vincent.boutour@gmail.com>
 
-ENV WWW_DIR=/var/www/localhost
+ENV WWW_DIR /var/www/localhost
 
 RUN adduser -u 1001 -S -s /sbin/nologin nginx \
  && addgroup -g 82 www-data \
