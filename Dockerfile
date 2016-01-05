@@ -29,4 +29,5 @@ VOLUME ${WWW_DIR} /etc/nginx/sites-enabled /var/log/nginx /var/lib/nginx /var/ru
 EXPOSE 1080
 USER nginx
 
+COMMAND [ "nginx" ]
 ENTRYPOINT [ "/entrypoint.sh" ]
