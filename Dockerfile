@@ -3,8 +3,6 @@ MAINTAINER Vincent Boutour <vincent.boutour@gmail.com>
 
 ENV WWW_DIR /var/www/localhost
 
-COPY entrypoint.sh /
-
 RUN adduser -u 1001 -S -s /sbin/nologin nginx \
  && addgroup -g 82 www-data \
  && addgroup nginx www-data \
@@ -17,7 +15,6 @@ RUN adduser -u 1001 -S -s /sbin/nologin nginx \
  && chown -R nginx:nogroup /var/lib/nginx \
  && chown -R nginx:nogroup /var/run/nginx \
  && chown -R nginx:nogroup /etc/nginx/sites-enabled \
- && chmod +x /entrypoint.sh \
  && rm -rf /var/cache/apk/*
 
 COPY ./nginx.conf /etc/nginx/
