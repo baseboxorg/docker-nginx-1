@@ -24,10 +24,11 @@ COPY ./nginx.conf /etc/nginx/
 COPY ./proxy.conf /etc/nginx/conf.d/
 COPY ./localhost.conf /etc/nginx/sites-enabled/localhost
 
-VOLUME ${WWW_DIR} /etc/nginx/sites-enabled /var/log/nginx /var/lib/nginx /var/run/nginx
+RUN sed -i "s|WWW_DIR|${WWW_DIR}|" /etc/nginx/sites-enabled/localhost
+
+VOLUME ${WWW_DIR} /var/log/nginx /var/lib/nginx /var/run/nginx
 
 EXPOSE 1080
 USER nginx
 
-CMD [ "nginx" ]
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "nginx" ]
