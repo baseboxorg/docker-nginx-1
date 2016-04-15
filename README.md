@@ -1,6 +1,6 @@
 # docker-nginx
 
-[![](https://badge.imagelayers.io/vibioh/nginx:latest.svg)](https://imagelayers.io/?images=vibioh/nginx:latest 'Get your own badge on imagelayers.io')
+[![Build Status](https://travis-ci.org/ViBiOh/docker-nginx.svg?branch=master)](https://travis-ci.org/ViBiOh/docker-nginx) [![](https://badge.imagelayers.io/vibioh/nginx:latest.svg)](https://imagelayers.io/?images=vibioh/nginx:latest 'Get your own badge on imagelayers.io')
 
 Light image for a nginx based on Alpine Linux.
 
