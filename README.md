@@ -16,4 +16,4 @@ Light image for a nginx based on Alpine Linux.
       --read-only \
       vibioh/nginx:latest
 
-After, simply browse [homemage](http://docker-ip/) to see content in `/var/www/localhost`.
+After, simply browse [homemage](http://localhost/) to see content in `/var/www/localhost`.
