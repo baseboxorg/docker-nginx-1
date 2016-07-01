@@ -29,4 +29,3 @@ EXPOSE 1080
 USER nginx
 
 ENTRYPOINT [ "nginx" ]
-CMD [ "-g", "'daemon off;'" ]
