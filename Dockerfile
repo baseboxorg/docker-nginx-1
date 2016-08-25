@@ -12,7 +12,6 @@ RUN adduser -u 1001 -S -s /sbin/nologin nginx \
  && chown -R nginx:www-data ${WWW_DIR} \
  && chown -R nginx:nogroup /var/log/nginx \
  && chown -R nginx:nogroup /var/lib/nginx \
- && chown -R nginx:nogroup /var/run/nginx \
  && chown -R nginx:nogroup /etc/nginx/sites-enabled \
  && rm -rf /var/cache/apk/*
 
