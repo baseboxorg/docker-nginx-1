@@ -7,6 +7,7 @@ RUN adduser -u 1001 -S -s /sbin/nologin nginx \
  && addgroup nginx www-data \
  && apk --update add nginx \
  && rm -rf /var/www/* \
+ && mkdir -p /run/nginx \
  && mkdir -p /etc/nginx/sites-enabled \
  && mkdir -p ${WWW_DIR} \
  && chown -R nginx:www-data ${WWW_DIR} \
