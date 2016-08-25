@@ -1,5 +1,4 @@
-FROM alpine:3.3
-MAINTAINER Vincent Boutour <vincent.boutour@gmail.com>
+FROM alpine:3.4
 
 ENV WWW_DIR /var/www/localhost
 
