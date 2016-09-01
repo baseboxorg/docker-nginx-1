@@ -6,7 +6,7 @@ Light image for a nginx based on Alpine Linux.
 
 ## Building
 
-`docker build -t vibioh/nginx --rm .`
+`docker build -t vibioh/nginx .`
 
 ## Usage
 
