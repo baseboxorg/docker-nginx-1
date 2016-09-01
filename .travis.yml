@@ -2,7 +2,7 @@ sudo: required
 services:
 - docker
 script:
-- docker build -t $DOCKER_USER}/nginx .
+- docker build -t ${DOCKER_USER}/nginx .
 - docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
 - docker push ${DOCKER_USER}/nginx
 notifications:
