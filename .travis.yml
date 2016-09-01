@@ -1,9 +1,9 @@
 sudo: required
 services:
-  - docker
+- docker
 script:
-  - "docker build -t vibioh/nginx --rm ."
-  - "docker login -e ${DOCKER_EMAIL} -u ${DOCKER_USER} -p ${DOCKER_PASS}"
-  - "docker push vibioh/nginx"
+- docker build -t $DOCKER_USER}/nginx .
+- docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+- docker push ${DOCKER_USER}/nginx
 notifications:
   email: false
